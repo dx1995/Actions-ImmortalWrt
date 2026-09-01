@@ -1,7 +1,10 @@
 #!/bin/bash
+# 下载最新版 smartdns
 git clone --depth=1 https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
+git clone --depth=1 https://github.com/pymumu/smartdns.git package/smartdns
 
-# 修改PSG1208分区表，从8MB扩展到16MB
-sed -i 's/0x050000 0x7b0000/0x050000 0xfb0000/' target/linux/ramips/dts/mt7620a_phicomm_psg1208.dts
-# 同时修改IMAGE_SIZE
-sed -i 's/IMAGE_SIZE := 7872k/IMAGE_SIZE := 16000k/' target/linux/ramips/image/mt7620.mk
+# 下载最新版 passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
+
+# 下载 passwall 依赖包
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall_packages
